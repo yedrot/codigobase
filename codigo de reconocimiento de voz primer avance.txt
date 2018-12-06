@@ -1,0 +1,20 @@
+SoftwareSerial mySerial(5, 6);
+int dato;
+void setup() {
+  pinMode(13, OUTPUT);
+  pinMode(2, OUTPUT);
+  Serial.begin(9600);
+  mySerial.begin(9600);  digitalWrite(13, LOW);  digitalWrite(2, LOW);
+} void loop() {
+  if (mySerial.available()) {
+    dato = mySerial.read();
+    Serial.write(dato);
+    if (dato == 'A')    {
+      digitalWrite(13, HIGH);
+      digitalWrite(2, HIGH);
+    }    if (dato == 'B')    {
+      digitalWrite(13, LOW);
+      digitalWrite(2, LOW);
+    }
+  }  delay(100);
+}
