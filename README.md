@@ -1,0 +1,2 @@
+# codigobase
+scrip variados
